@@ -1,0 +1,12 @@
+<input (input)="input = $event.target.value" (keyup.enter)="search(input)" />
+<button (click)="this.search(input)">Yes</button>
+
+<div *ngIf="resultsToDisplay !== null">
+  <ul *ngFor="let item of searchResults">
+    <li>
+      yes
+      <h3>Country Name : {{item.imageResults[resultsToDisplay].url}}, Code:
+        {{item.results[resultsToDisplay].url }}</h3>
+    </li>
+  </ul>
+</div>

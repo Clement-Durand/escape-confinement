@@ -1,0 +1,69 @@
+[{
+    "keywords": [
+      "1",
+      "11"
+    ],
+    "results": [{
+        "url": "url1",
+        "title": "title1",
+        "site": "site1",
+        "preview": "preview1",
+        "lastVisited": "(pas forcément, 0 si jamais et filtré a affichage ? )"
+      },
+      {
+        "url": "url2",
+        "title": "title2",
+        "site": "site2",
+        "preview": "preview2",
+        "lastVisited": "(pas forcément, 0 si jamais et filtré a affichage ? )"
+      }
+    ],
+    "imageResults": [{
+        "img": "img1",
+        "title": "titleimg1",
+        "site": "siteimg1",
+        "url": "urlimg1"
+      },
+      {
+        "img": "img2",
+        "title": "titleimg2",
+        "site": "siteimg2",
+        "url": "urlimg2"
+      }
+    ]
+  },
+  {
+    "keywords": [
+      "2",
+      "12"
+    ],
+    "results": [{
+        "url": "url3",
+        "title": "title3",
+        "site": "site3",
+        "preview": "preview3",
+        "lastVisited": "(pas forcément, 0 si jamais et filtré a affichage ? )"
+      },
+      {
+        "url": "url4",
+        "title": "title4",
+        "site": "site4",
+        "preview": "preview4",
+        "lastVisited": "(pas forcément, 0 si jamais et filtré a affichage ? )"
+      }
+    ],
+    "imageResults": [{
+        "img": "img3",
+        "title": "titleimg3",
+        "site": "siteimg3",
+        "url": "urlimg3"
+      },
+      {
+        "img": "img4",
+        "title": "titleimg4",
+        "site": "siteimg4",
+        "url": "urlimg4"
+      }
+    ]
+  }
+]
