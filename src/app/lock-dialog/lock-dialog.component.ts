@@ -6,12 +6,15 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./lock-dialog.component.scss'],
 })
 export class LockDialogComponent {
-  input: string;
+  inputValue: string = '';
+  code;
+  lockType;
 
   constructor(public activeModal: NgbActiveModal) {}
 
   checkCode() {
-    if (this.input === '123') {
+    console.log(this.code.toString());
+    if (this.inputValue === this.code) {
       this.activeModal.close();
     }
   }

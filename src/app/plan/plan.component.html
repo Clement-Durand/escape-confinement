@@ -1,10 +1,7 @@
 <div class="main">
-  <img
-    (click)="this.openLockDialog()"
-    src="../../assets/images/lock.png"
-    height="15px"
-    width="15px"
-  />
+  <img (click)="this.openLockDialog('A', 'digits')" src="../../assets/images/lock.png" height="15px" width="15px" />
+  <img (click)="this.openLockDialog('E', 'colors')" src="../../assets/images/lock.png" height="15px" width="15px" />
+  <img (click)="this.openLockDialog('F', 'directions')" src="../../assets/images/lock.png" height="15px" width="15px" />
 </div>
 
 <div>

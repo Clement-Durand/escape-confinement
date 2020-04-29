@@ -1,0 +1,25 @@
+{
+  "digits": {
+    "A": "123",
+    "B": "11"
+  },
+  "chars": {
+    "C": "abc",
+    "D": "def"
+  },
+  "colors": {
+    "E": [
+      "Bleu",
+      "Rouge",
+      "Vert",
+      "Jaune"
+    ]
+  },
+  "directions": {
+    "F": ["Haut",
+      "Bas",
+      "Gauche",
+      "Droite"
+    ]
+  }
+}
