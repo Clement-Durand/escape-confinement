@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LockDialogComponent } from '../lock-dialog/lock-dialog.component';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import codes from './codes.json';
+import codes from '../data/codes.json';
 
 @Component({
   selector: 'app-plan',
@@ -16,8 +16,16 @@ export class PlanComponent implements OnInit {
   ngOnInit(): void {}
 
   openLockDialog(lockName: string, lockType: string): void {
-    const modalRef = this.modalService.open(LockDialogComponent);
+    const modalRef = this.modalService.open(LockDialogComponent, {
+      windowClass: 'modalClass',
+      backdrop: false,
+    });
     modalRef.componentInstance.code = this.codes[lockType][lockName];
     modalRef.componentInstance.lockType = lockType;
+    modalRef.result.then((result) => {
+      if (result == 'done') {
+        console.log(result);
+      }
+    });
   }
 }

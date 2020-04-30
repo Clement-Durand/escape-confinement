@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import researchData from './researchData.json';
+import researchData from '../data/researchData.json';
 
 @Component({
   selector: 'app-mobile-main',

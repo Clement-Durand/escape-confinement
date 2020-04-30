@@ -2,22 +2,34 @@
   <div *ngFor="let item of [1,2,3,4,5,6,7,8,9,0]" class="key"
     (click)="inputValue =''.concat(inputValue,item); input.value = ''.concat(input.value,item)"> {{item}}</div>
   <input (input)="inputValue = $event.target.value" (keyup.enter)="checkCode()" #input />
-  <button type="button" class="btn btn-primary" (click)="checkCode()" *ngIf="inputValue">
-    Valider
-  </button>
+  
   <button type="button" class="btn btn-primary" (click)="inputValue=''; input.value = ''" *ngIf="inputValue">
     Clear
   </button>
 </div>
 
-<div id="digipad" *ngIf="this.lockType == 'directions'">
-  <div *ngFor="let item of ['^','&gt;','&lt;','v']" class="key"
+<div id="directionpad" *ngIf="this.lockType == 'directions'">
+  <div *ngFor="let item of ['&lt;','^','&gt;','v']" class="key"
     (click)="inputValue =''.concat(inputValue,item); input.value = ''.concat(input.value,item)"> {{item}}</div>
   <input (input)="inputValue = $event.target.value" (keyup.enter)="checkCode()" #input />
-  <button type="button" class="btn btn-primary" (click)="checkCode()" *ngIf="inputValue">
-    Valider
-  </button>
   <button type="button" class="btn btn-primary" (click)="inputValue=''; input.value = ''" *ngIf="inputValue">
     Clear
   </button>
+</div> 
+
+<div id="colorpad" *ngIf="this.lockType == 'colors'">
+  <div *ngFor="let item of this.colors" class="key" style="background : {{item.value}}; color: white"
+    (click)="inputValue =''.concat(inputValue,item.displayed); input.value = ''.concat(input.value,item.displayed)"> {{item.displayed}}</div>
+  <input (input)="inputValue = $event.target.value" (keyup.enter)="checkCode()" #input />
+
+  <button type="button" class="btn btn-primary" (click)="inputValue=''; input.value = ''" *ngIf="inputValue">
+    Clear
+  </button>
+  
+  
 </div>
+<button type="button" class="btn btn-primary" (click)="checkCode()">
+    Valider
+  </button>
+  <button type="button" class="btn btn-primary" (click)="this.activeModal.close()">
+Quitter  </button>

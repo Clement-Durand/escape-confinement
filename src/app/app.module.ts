@@ -15,6 +15,8 @@ import { LockDialogComponent } from './lock-dialog/lock-dialog.component';
 import { MobileLoginComponent } from './mobile-login/mobile-login.component';
 import { MobileMainComponent } from './mobile-main/mobile-main.component';
 
+import { TimerService } from './services/timer.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +45,7 @@ import { MobileMainComponent } from './mobile-main/mobile-main.component';
     ]),
     NgbModule,
   ],
-  providers: [],
+  providers: [TimerService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

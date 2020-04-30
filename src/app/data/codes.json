@@ -8,18 +8,9 @@
     "D": "def"
   },
   "colors": {
-    "E": [
-      "Bleu",
-      "Rouge",
-      "Vert",
-      "Jaune"
-    ]
+    "E": "BleuJauneRougeVert"
   },
   "directions": {
-    "F": ["Haut",
-      "Bas",
-      "Gauche",
-      "Droite"
-    ]
+    "F": "^^^^vv<>"
   }
 }
