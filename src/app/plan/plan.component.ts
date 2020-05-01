@@ -10,7 +10,7 @@ import codes from '../data/codes.json';
 })
 export class PlanComponent implements OnInit {
   public codes = codes;
-
+  roomsUnlocked = 0;
   constructor(private modalService: NgbModal) {}
 
   ngOnInit(): void {}
@@ -18,7 +18,8 @@ export class PlanComponent implements OnInit {
   openLockDialog(lockName: string, lockType: string): void {
     const modalRef = this.modalService.open(LockDialogComponent, {
       windowClass: 'modalClass',
-      backdrop: false,
+      backdropClass: 'modalBackdropClass',
+      centered: true,
     });
     modalRef.componentInstance.code = this.codes[lockType][lockName];
     modalRef.componentInstance.lockType = lockType;

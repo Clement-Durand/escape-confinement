@@ -22,7 +22,6 @@ export class MobileMainComponent implements OnInit {
     searched = searched.toUpperCase();
     for (index = 0; index < this.searchResults.length; ++index) {
       entry = this.searchResults[index];
-      console.log(entry.keywords);
       for (let i = 0; i < entry.keywords.length; ++i) {
         if (searched === entry.keywords[i]) {
           return (this.resultsToDisplay = index);

@@ -1,35 +1,93 @@
+<!--
+  Displaying digits lock
+-->
+
 <div id="digipad" *ngIf="this.lockType == 'digits'">
-  <div *ngFor="let item of [1,2,3,4,5,6,7,8,9,0]" class="key"
-    (click)="inputValue =''.concat(inputValue,item); input.value = ''.concat(input.value,item)"> {{item}}</div>
-  <input (input)="inputValue = $event.target.value" (keyup.enter)="checkCode()" #input />
-  
-  <button type="button" class="btn btn-primary" (click)="inputValue=''; input.value = ''" *ngIf="inputValue">
-    Clear
-  </button>
+  <div
+    *ngFor="let item of [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]"
+    class="key"
+    (click)="inputValue = ''.concat(inputValue, item); input.value = inputValue"
+  >
+    {{ item }}
+  </div>
+  <input
+    (input)="inputValue = $event.target.value; input.value = inputValue"
+    (keyup.enter)="checkCode()"
+    #input
+  />
 </div>
+
+<!--
+  Displaying characters lock
+-->
+
+<div id="chars" *ngIf="this.lockType == 'chars'">
+  <input type="text" (input)="changeFocus(1)" maxlength="1" #input1 />
+  <input type="text" (input)="changeFocus(2)" maxlength="1" #input2 />
+  <input type="text" (input)="changeFocus(3)" maxlength="1" #input3 />
+  <input type="text" (input)="changeFocus(4)" maxlength="1" #input4 />
+  <input type="text" (input)="changeFocus(5)" maxlength="1" #input5 />
+  <input type="text" (input)="changeFocus(6)" maxlength="1" #input6 />
+</div>
+
+<!--
+  Displaying directions lock
+-->
 
 <div id="directionpad" *ngIf="this.lockType == 'directions'">
-  <div *ngFor="let item of ['&lt;','^','&gt;','v']" class="key"
-    (click)="inputValue =''.concat(inputValue,item); input.value = ''.concat(input.value,item)"> {{item}}</div>
-  <input (input)="inputValue = $event.target.value" (keyup.enter)="checkCode()" #input />
-  <button type="button" class="btn btn-primary" (click)="inputValue=''; input.value = ''" *ngIf="inputValue">
-    Clear
-  </button>
-</div> 
+  <div
+    *ngFor="let item of ['&lt;', '^', '&gt;', 'v']"
+    class="key"
+    (click)="inputValue = ''.concat(inputValue, item)"
+  >
+    {{ item }}
+  </div>
+</div>
+
+<!--
+  Displaying colors lock
+-->
 
 <div id="colorpad" *ngIf="this.lockType == 'colors'">
-  <div *ngFor="let item of this.colors" class="key" style="background : {{item.value}}; color: white"
-    (click)="inputValue =''.concat(inputValue,item.displayed); input.value = ''.concat(input.value,item.displayed)"> {{item.displayed}}</div>
-  <input (input)="inputValue = $event.target.value" (keyup.enter)="checkCode()" #input />
-
-  <button type="button" class="btn btn-primary" (click)="inputValue=''; input.value = ''" *ngIf="inputValue">
-    Clear
-  </button>
-  
-  
+  <div
+    *ngFor="let item of this.colors"
+    class="key"
+    style="background : {{ item.value }}; color: white"
+    (click)="
+      inputValue = ''.concat(inputValue, item.displayed);
+      input.value = ''.concat(input.value, item.displayed)
+    "
+  >
+    {{ item.displayed }}
+  </div>
+  <input
+    (input)="inputValue = $event.target.value"
+    (keyup.enter)="checkCode()"
+    #input
+  />
 </div>
-<button type="button" class="btn btn-primary" (click)="checkCode()">
+
+<!--
+  Displaying buttons shared by all types of locks
+-->
+
+<div>
+  <button
+    type="button"
+    class="btn btn-primary"
+    (click)="checkCode()"
+    #submitButton
+  >
     Valider
   </button>
-  <button type="button" class="btn btn-primary" (click)="this.activeModal.close()">
-Quitter  </button>
+  <button
+    type="button"
+    class="btn btn-primary"
+    (click)="this.activeModal.close()"
+  >
+    Quitter
+  </button>
+  <button type="button" class="btn btn-primary" (click)="clearInput()">
+    Clear
+  </button>
+</div>

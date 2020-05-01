@@ -62,10 +62,6 @@ export class TimerComponent implements OnInit {
           }
         }
       }
-
-      console.log('hours' + this.hours);
-      console.log('minutes' + this.minutes);
-      console.log('seconds' + this.seconds);
     }
   }
 

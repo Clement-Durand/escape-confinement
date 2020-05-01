@@ -1,7 +1,76 @@
 <div class="main">
-  <img (click)="this.openLockDialog('A', 'digits')" src="../../assets/images/lock.png" height="15px" width="15px" />
-  <img (click)="this.openLockDialog('E', 'colors')" src="../../assets/images/lock.png" height="15px" width="15px" />
-  <img (click)="this.openLockDialog('F', 'directions')" src="../../assets/images/lock.png" height="15px" width="15px" />
+  <img
+    (click)="this.openLockDialog('A', 'digits')"
+    src="../../assets/images/lock.png"
+    height="15px"
+    width="15px"
+  />
+  <img
+    (click)="this.openLockDialog('C', 'chars')"
+    src="../../assets/images/lock.png"
+    height="15px"
+    width="15px"
+  />
+  <img
+    (click)="this.openLockDialog('E', 'colors')"
+    src="../../assets/images/lock.png"
+    height="15px"
+    width="15px"
+  />
+  <img
+    (click)="this.openLockDialog('F', 'directions')"
+    src="../../assets/images/lock.png"
+    height="15px"
+    width="15px"
+  />
+</div>
+
+<div id="plan">
+  <div
+    class="room"
+    [ngClass]="{ open: this.roomsUnlocked >= 0 }"
+    (click)="this.roomsUnlocked = this.roomsUnlocked + 1"
+  ></div>
+
+  <div
+    class="room"
+    [ngClass]="{ open: this.roomsUnlocked >= 3 }"
+    (click)="this.roomsUnlocked = this.roomsUnlocked + 1"
+  ></div>
+
+  <div
+    class="room"
+    [ngClass]="{ open: this.roomsUnlocked >= 2 }"
+    (click)="this.roomsUnlocked = this.roomsUnlocked + 1"
+  ></div>
+
+  <div
+    class="room"
+    [ngClass]="{ open: this.roomsUnlocked >= 2 }"
+    (click)="this.roomsUnlocked = this.roomsUnlocked + 1"
+  ></div>
+
+  <div
+    class="room"
+    [ngClass]="{ open: this.roomsUnlocked >= 1 }"
+    (click)="this.roomsUnlocked = this.roomsUnlocked + 1"
+  ></div>
+  <div
+    class="room"
+    [ngClass]="{ open: this.roomsUnlocked >= 2 }"
+    (click)="this.roomsUnlocked = this.roomsUnlocked + 1"
+  ></div>
+  <div class="room"></div>
+  <div
+    class="room"
+    [ngClass]="{ open: this.roomsUnlocked >= 4 }"
+    (click)="this.roomsUnlocked = this.roomsUnlocked + 1"
+  ></div>
+  <div
+    class="room"
+    [ngClass]="{ open: this.roomsUnlocked >= 5 }"
+    (click)="this.roomsUnlocked = this.roomsUnlocked + 1"
+  ></div>
 </div>
 
 <div>

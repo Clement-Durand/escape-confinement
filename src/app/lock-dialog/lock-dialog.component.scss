@@ -5,11 +5,17 @@ body {
 
 #digipad,
 #directionpad,
-#colorpad {
+#colorpad,
+#chars {
   width: 200px;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
+}
+
+#chars input {
+  width: 20px;
+  text-align: center;
 }
 
 

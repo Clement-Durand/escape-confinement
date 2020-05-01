@@ -2,10 +2,21 @@
 
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
+
 .modalClass .modal-dialog {
   max-width: 50%;
-  padding-top: 5%;
   .modal-content {
       padding: 3em 0;
   }
 }
+
+.modalBackdropClass, .modal-backdrop {
+  opacity: 0 !important;
+}
+
+ 
+html,
+body {
+  height: 100%;
+  overflow-y: hidden
+}  

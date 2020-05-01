@@ -4,8 +4,8 @@
     "B": "11"
   },
   "chars": {
-    "C": "abc",
-    "D": "def"
+    "C": "abcdef",
+    "D": "defabc"
   },
   "colors": {
     "E": "BleuJauneRougeVert"
