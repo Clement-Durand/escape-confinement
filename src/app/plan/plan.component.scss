@@ -28,21 +28,22 @@ $color-border: hotpink;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   background: #800000;
+  cursor: not-allowed;
 }
 
 .open {
-
-background: #32a850;
-	background-size: 400% 400%;
-	animation: gradient 1.5s cubic-bezier(.18,.94,.77,1.4);
+  background: #32a850;
+  background-size: 400% 400%;
+  animation: gradient 1.5s cubic-bezier(0.18, 0.94, 0.77, 1.4);
+  cursor: auto;
 }
 
 @keyframes gradient {
-	0% {
-		background: #800000;
-	}
+  0% {
+    background: #800000;
+  }
   100% {
-    background: #32a850
+    background: #32a850;
   }
 }
 /******************************************/
@@ -53,15 +54,54 @@ div[class^="room"]:nth-child(1) {
   width: 1000px;
   height: 545px;
   position: relative;
-}
-div[class^="room"]:nth-child(1):after {
-  border: hotpink 4px solid;
-  top: 100;
-  left: 10;
-  content: "";
-  width: 100px;
-  height: 45px;
-  position: absolute;
+  * {
+    z-index: 1000;
+    position: absolute;
+  }
+  img {
+    cursor: pointer;
+  }
+  img:nth-child(1) {
+    top: 345px;
+    left: 260px;
+  }
+  img:nth-child(2) {
+    top: 295px;
+    left: 408px;
+  }
+  img:nth-child(3) {
+    top: 150px;
+    left: 370px;
+  }
+  img:nth-child(4) {
+    top: 5px;
+    left: 320px;
+  }
+  img:nth-child(5) {
+    top: 200px;
+    left: 110px;
+  }
+  img:nth-child(6) {
+    top: 207px;
+    left: 150px;
+  }
+  &::after {
+    content: "";
+    border: 4px black solid;
+    position: absolute;
+    top: 420px;
+    left: -3px;
+    width: 183px;
+    height: 120px;
+    background: repeating-linear-gradient(
+      -45deg,
+      black,
+      black 5px,
+      #800000 5px,
+      #800000 10px
+    );
+    cursor: not-allowed;
+  }
 }
 
 div[class^="room"]:nth-child(2) {
@@ -84,6 +124,23 @@ div[class^="room"]:nth-child(4) {
   left: 405px;
   width: 430px;
   height: 275px;
+  * {
+    z-index: 1000;
+    position: absolute;
+    cursor: pointer;
+  }
+  img:nth-child(1) {
+    top: -23px;
+    left: 250px;
+  }
+  img:nth-child(2) {
+    top: 78px;
+    left: 380px;
+  }
+  img:nth-child(3) {
+    top: 25px;
+    left: 428px;
+  }
 }
 
 div[class^="room"]:nth-child(5) {
@@ -105,7 +162,6 @@ div[class^="room"]:nth-child(7) {
   left: 405px;
   width: 225px;
   height: 104px;
-  background-color: black;
 }
 
 div[class^="room"]:nth-child(8) {
@@ -120,4 +176,8 @@ div[class^="room"]:nth-child(9) {
   left: 831px;
   width: 169px;
   height: 279px;
+}
+
+.scenario-bit {
+  cursor: pointer;
 }

@@ -1,0 +1,34 @@
+{
+  "0": {
+    "text": "Apres login, explication valla mes couilles il lui manque des éléments",
+    "title": "Suspicion"
+  },
+  "A": {
+    "text": "Ouverture cuisine, continue explication et indice beaucoup d'infos, elle ne sait pas ou donner de la tete",
+    "title": "Confusion"
+  },
+  "B": {
+    "text": "Ouverture couloir, plus clair mais besoin de faire des recherches",
+    "title": "Reflexion"
+  },
+  "C": {
+    "text": "Ouverture tel olala elle fait des recherches sur des lieux ou les animaux sont bien traités, il y a meme des recherches qui datent",
+    "title": ""
+  },
+  "D": {
+    "text": "c'est bien ce qui me semblait, elle a du faire un choix selon certains critères",
+    "title": "Conclusion"
+  },
+  "E": {
+    "text": "elle semble décidée a aller a xxx mais elle ne pourra pas y aller sans 'bouffe mais pas obvious'",
+    "title": "Provision"
+  },
+  "F": {
+    "text": "Ouverture placard -> elle a de quoi faire le voyage mais besoin d'apprendre a communiquer avec autres animaux",
+    "title": "Communication"
+  },
+  "G": {
+    "text": "Ouverture bureau -> il semble qu'elle soit prete a partir mais elle est toujours la, le confinement a du la pousser a y réfléchir a deux fois et approfondir ses recherches",
+    "title": "Fiction"
+  }
+}

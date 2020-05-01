@@ -29,6 +29,7 @@ export class LockDialogComponent {
   inputValue = '';
   code;
   lockType;
+  lockName;
 
   constructor(
     public activeModal: NgbActiveModal,
@@ -81,7 +82,6 @@ export class LockDialogComponent {
         this.input5.nativeElement.value +
         this.input6.nativeElement.value;
     }
-    console.log(this.inputValue);
     if (this.inputValue === this.code) {
       this.activeModal.close('done');
     } else {

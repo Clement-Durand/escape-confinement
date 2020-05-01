@@ -1,82 +1,99 @@
-<div class="main">
-  <img
-    (click)="this.openLockDialog('A', 'digits')"
-    src="../../assets/images/lock.png"
-    height="15px"
-    width="15px"
-  />
-  <img
-    (click)="this.openLockDialog('C', 'chars')"
-    src="../../assets/images/lock.png"
-    height="15px"
-    width="15px"
-  />
-  <img
-    (click)="this.openLockDialog('E', 'colors')"
-    src="../../assets/images/lock.png"
-    height="15px"
-    width="15px"
-  />
-  <img
-    (click)="this.openLockDialog('F', 'directions')"
-    src="../../assets/images/lock.png"
-    height="15px"
-    width="15px"
-  />
-</div>
-
 <div id="plan">
+  <div class="room open">
+    <img
+      (click)="this.openLockDialog('A')"
+      src="../../assets/images/lock.png"
+      height="15px"
+      width="15px"
+    />
+    <img
+      (click)="this.openLockDialog('B')"
+      src="../../assets/images/lock.png"
+      height="15px"
+      width="15px"
+    />
+    <img
+      (click)="this.openLockDialog('F')"
+      src="../../assets/images/lock.png"
+      height="15px"
+      width="15px"
+    />
+    <img
+      (click)="this.openLockDialog('H')"
+      src="../../assets/images/lock.png"
+      height="15px"
+      width="15px"
+    />
+    <img src="../../assets/images/laptop.png" height="35px" width="35px" />
+    <img src="../../assets/images/smartphone.png" height="20px" width="20px" />
+  </div>
+
   <div
     class="room"
-    [ngClass]="{ open: this.roomsUnlocked >= 0 }"
-    (click)="this.roomsUnlocked = this.roomsUnlocked + 1"
+    [ngClass]="{ open: this.locksUnlocked.includes('E') }"
   ></div>
 
   <div
     class="room"
-    [ngClass]="{ open: this.roomsUnlocked >= 3 }"
-    (click)="this.roomsUnlocked = this.roomsUnlocked + 1"
+    [ngClass]="{ open: this.locksUnlocked.includes('B') }"
   ></div>
+
+  <div class="room" [ngClass]="{ open: this.locksUnlocked.includes('B') }">
+    <div *ngIf="this.locksUnlocked.includes('B')">
+      <img
+        (click)="this.openLockDialog('E')"
+        src="../../assets/images/lock.png"
+        height="15px"
+        width="15px"
+      />
+      <img
+        (click)="this.openLockDialog('D')"
+        src="../../assets/images/lock.png"
+        height="15px"
+        width="15px"
+      />
+      <img
+        (click)="this.openLockDialog('G')"
+        src="../../assets/images/lock.png"
+        height="15px"
+        width="15px"
+      />
+    </div>
+  </div>
 
   <div
     class="room"
-    [ngClass]="{ open: this.roomsUnlocked >= 2 }"
-    (click)="this.roomsUnlocked = this.roomsUnlocked + 1"
-  ></div>
-
-  <div
-    class="room"
-    [ngClass]="{ open: this.roomsUnlocked >= 2 }"
-    (click)="this.roomsUnlocked = this.roomsUnlocked + 1"
-  ></div>
-
-  <div
-    class="room"
-    [ngClass]="{ open: this.roomsUnlocked >= 1 }"
-    (click)="this.roomsUnlocked = this.roomsUnlocked + 1"
+    [ngClass]="{ open: this.locksUnlocked.includes('A') }"
   ></div>
   <div
     class="room"
-    [ngClass]="{ open: this.roomsUnlocked >= 2 }"
-    (click)="this.roomsUnlocked = this.roomsUnlocked + 1"
-  ></div>
-  <div class="room"></div>
-  <div
-    class="room"
-    [ngClass]="{ open: this.roomsUnlocked >= 4 }"
-    (click)="this.roomsUnlocked = this.roomsUnlocked + 1"
+    [ngClass]="{ open: this.locksUnlocked.includes('B') }"
   ></div>
   <div
     class="room"
-    [ngClass]="{ open: this.roomsUnlocked >= 5 }"
-    (click)="this.roomsUnlocked = this.roomsUnlocked + 1"
+    [ngClass]="{ open: this.locksUnlocked.includes('B') }"
+  ></div>
+  <div
+    class="room"
+    [ngClass]="{ open: this.locksUnlocked.includes('D') }"
+  ></div>
+  <div
+    class="room"
+    [ngClass]="{ open: this.locksUnlocked.includes('G') }"
   ></div>
 </div>
 
-<div>
-  Le scénario sera ici lalalalalalalaalalalalalal
-  <br />
-  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia non
-  excepturi, ea blanditiis voluptatum fugit officia sequi rerum natus tempore
-  sit deleniti? Culpa cupiditate autem impedit provident exercitationem est eos!
+<div style="display: flex; position: relative;">
+  <div
+    *ngFor="let item of ['0', 'A', 'B', 'C', 'D', 'E', 'F', 'G']"
+    style="margin: 0 auto;"
+  >
+    <div
+      *ngIf="this.locksUnlocked.includes(item)"
+      class="scenario-bit"
+      (click)="openScenarioDialog(this.scenarioBits[item])"
+    >
+      {{ this.scenarioBits[item].title }}
+    </div>
+  </div>
 </div>

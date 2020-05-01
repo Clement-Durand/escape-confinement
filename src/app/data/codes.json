@@ -1,16 +1,30 @@
 {
-  "digits": {
-    "A": "123",
-    "B": "11"
+  "A": {
+    "code": "abcdef",
+    "lockType": "chars"
   },
-  "chars": {
-    "C": "abcdef",
-    "D": "defabc"
+  "B": {
+    "code": "^^^",
+    "lockType": "directions"
   },
-  "colors": {
-    "E": "BleuJauneRougeVert"
+  "D": {
+    "code": "Bleu",
+    "lockType": "colors"
   },
-  "directions": {
-    "F": "^^^^vv<>"
+  "E": {
+    "code": "efghij",
+    "lockType": "chars"
+  },
+  "F": {
+    "code": "123",
+    "lockType": "digits"
+  },
+  "G": {
+    "code": "456",
+    "lockType": "digits"
+  },
+  "H": {
+    "code": "234",
+    "lockType": "digits"
   }
 }
