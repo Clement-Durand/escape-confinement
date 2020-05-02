@@ -16,7 +16,7 @@
     />
     <img
       (click)="this.openLockDialog('F')"
-      src="assets/images/lock.png"
+      src="https://www.escape-confinement.cf/assets/images/lock.png"
       height="15px"
       width="15px"
       [ngClass]="{ opened: this.locksUnlocked.includes('F') }"
@@ -31,7 +31,10 @@
     <img src="assets/images/laptop.png" height="35px" width="35px" />
     <img src="assets/images/smartphone.png" height="20px" width="20px" />
     <div class="table"></div>
-    <div class="buffet-right" [ngClass]="{open: this.locksUnlocked.includes('F')}"></div>
+    <div
+      class="buffet-right"
+      [ngClass]="{ open: this.locksUnlocked.includes('F') }"
+    ></div>
   </div>
 
   <div
