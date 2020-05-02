@@ -1,8 +1,28 @@
-.red {
-  color: red
+.time {
+  font-family: 'Share Tech';
+  text-align: center;
+  color: #152629;
+  letter-spacing: 0.01em;
+  font-size: 110px;
+  font-weight: bold;
+  padding-top: 1rem;
+}
+
+.timeOver {
+  color: rgb(236, 82, 82);
 }
 
 .penalty {
-  color: red;
+  color: rgb(236, 82, 82);
   text-decoration: underline;
+  animation: penalty 500ms;
+}
+
+@keyframes penalty {
+  10% {
+    transform: translate(5px, 20px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
 }

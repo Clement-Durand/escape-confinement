@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { TimerService } from './../services/timer.service';
+import { ThrowStmt } from '@angular/compiler';
 
 @Component({
   templateUrl: './lock-dialog.component.html',
@@ -17,16 +18,19 @@ export class LockDialogComponent {
   @ViewChild('submitButton') submitButton: any;
 
   colors = [
-    { value: 'blue', displayed: 'Bleu' },
-    { value: 'pink', displayed: 'Rose' },
-    { value: 'green', displayed: 'Vert' },
-    { value: 'red', displayed: 'Rouge' },
-    { value: 'grey', displayed: 'Gris' },
-    { value: 'orange', displayed: 'Orange' },
-    { value: 'yellow', displayed: 'Jaune' },
+    { value: 'blue', codeValue: '1' },
+    { value: 'pink', codeValue: '2' },
+    { value: 'green', codeValue: '3' },
+    { value: 'red', codeValue: '4' },
+    { value: 'grey', codeValue: '5' },
+    { value: 'orange', codeValue: '6' },
+    { value: 'yellow', codeValue: '7' },
+    { value: 'orange', codeValue: '8' },
+    { value: 'yellow', codeValue: '9' },
   ];
 
   inputValue = '';
+  inputValueColors = [];
   code;
   lockType;
   lockName;
@@ -35,6 +39,10 @@ export class LockDialogComponent {
     public activeModal: NgbActiveModal,
     private timerService: TimerService
   ) {}
+
+  /*
+    Characters
+  */
 
   changeFocus(inputIndex) {
     switch (inputIndex) {
@@ -71,6 +79,35 @@ export class LockDialogComponent {
     }
   }
 
+  /*
+    Directions
+  */
+
+  addDirectionInput(input) {
+    if (this.inputValue.length < 4) {
+      this.inputValue = ''.concat(this.inputValue, input);
+    }
+  }
+
+  /*
+    Colors
+  */
+
+  addColorInput(input) {
+    if (this.inputValue.length < 5) {
+      this.inputValue = ''.concat(this.inputValue, input.codeValue);
+      this.inputValueColors.push(input.value);
+    }
+  }
+
+  delColorInput() {
+    this.inputValue = this.inputValue.substr(0, this.inputValue.length - 1);
+    this.inputValueColors.pop();
+  }
+  /*
+    Shared
+  */
+
   checkCode() {
     if (this.lockType === 'chars') {
       this.inputValue =
@@ -93,7 +130,7 @@ export class LockDialogComponent {
 
   clearInput() {
     this.inputValue = '';
-    if (this.lockType === 'digits' || this.lockType === 'colors') {
+    if (this.lockType === 'digits') {
       this.input.nativeElement.value = '';
     } else if (this.lockType === 'chars') {
       this.input1.nativeElement.value = '';
@@ -103,6 +140,8 @@ export class LockDialogComponent {
       this.input5.nativeElement.value = '';
       this.input6.nativeElement.value = '';
       this.input1.nativeElement.focus();
+    } else if (this.lockType === 'colors') {
+      this.inputValueColors = [];
     }
   }
 }

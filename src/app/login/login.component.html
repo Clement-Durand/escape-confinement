@@ -1,1 +1,25 @@
-<button (click)="sendMessage()">Start</button>
+<div class="test">
+  <div class="container">
+    <h1>Connexion</h1>
+    <div class="inputs">
+      <input
+        type="text"
+        placeholder="Utilisateur"
+        #usernameInput
+        [ngClass]="{ wrongInput: this.wrongInput }"
+      />
+      <input
+        type="password"
+        placeholder="Mot de passe"
+        #passwordInput
+        [ngClass]="{ wrongInput: this.wrongInput }"
+        (keyup.enter)="this.checkInputs()"
+      />
+    </div>
+    <div class="buttons">
+      <div class="button submit" (click)="this.checkInputs()" #submitButton>
+        SE CONNECTER
+      </div>
+    </div>
+  </div>
+</div>

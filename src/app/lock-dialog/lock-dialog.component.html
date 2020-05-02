@@ -40,11 +40,22 @@
 
 <div id="directionpad" *ngIf="this.lockType == 'directions'">
   <div
-    *ngFor="let item of ['&lt;', '^', '&gt;', 'v']"
+    *ngFor="let direction of ['&lt;', '^', '&gt;', 'v']"
     class="key"
-    (click)="inputValue = ''.concat(inputValue, item)"
+    (click)="addDirectionInput(direction)"
   >
-    {{ item }}
+    {{ direction }}
+  </div>
+  <div class="directions-input-container">
+    <div *ngFor="let inputIndex of [0, 1, 2, 3]" class="input-display">
+      {{ this.inputValue[inputIndex] ? this.inputValue[inputIndex] : " " }}
+    </div>
+    <div
+      (click)="inputValue = inputValue.substr(0, inputValue.length - 1)"
+      class="delete-button"
+    >
+      Suppr
+    </div>
   </div>
 </div>
 
@@ -54,21 +65,21 @@
 
 <div id="colorpad" *ngIf="this.lockType == 'colors'">
   <div
-    *ngFor="let item of this.colors"
+    *ngFor="let color of this.colors"
     class="key"
-    style="background : {{ item.value }}; color: white"
-    (click)="
-      inputValue = ''.concat(inputValue, item.displayed);
-      input.value = ''.concat(input.value, item.displayed)
-    "
-  >
-    {{ item.displayed }}
+    style="background : {{ color.value }}"
+    (click)="addColorInput(color)"
+  ></div>
+  <div class="colors-input-container">
+    <div
+      *ngFor="let inputIndex of [0, 1, 2, 3, 4]"
+      class="input-display"
+      style="background : {{ this.inputValueColors[inputIndex] }}"
+    ></div>
+    <div (click)="delColorInput()" class="delete-button">
+      Suppr
+    </div>
   </div>
-  <input
-    (input)="inputValue = $event.target.value"
-    (keyup.enter)="checkCode()"
-    #input
-  />
 </div>
 
 <!--

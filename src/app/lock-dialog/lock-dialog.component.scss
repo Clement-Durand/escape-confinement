@@ -1,6 +1,5 @@
 body {
   background-color: #000000;
-
 }
 
 #digipad,
@@ -13,11 +12,103 @@ body {
   margin-right: auto;
 }
 
+/*
+  Only Characters lock
+*/
+
 #chars input {
   width: 20px;
   text-align: center;
 }
 
+/*
+  Only Directions lock
+*/
+
+.directions-input-container {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  left: -20px;
+  width: 240px;
+  .input-display,
+  .delete-button {
+    border: 1px solid #152629;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin: auto;
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    text-align: center;
+    color: #152629;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+  }
+
+  .delete-button {
+    position: absolute;
+    right: -65px;
+    top: 8px;
+    width: 60px;
+    height: 34px;
+    font-size: 20px;
+    cursor: pointer;
+    &:hover {
+      background: #152629;
+      color: white;
+    }
+  }
+}
+
+/*
+  Only Colors lock
+*/
+
+#colorpad {
+  .key {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.colors-input-container {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  left: -50px;
+  width: 300px;
+  .input-display,
+  .delete-button {
+    border-radius: 5px;
+    margin: auto;
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .delete-button {
+    position: absolute;
+    right: -65px;
+    top: 8px;
+    width: 60px;
+    height: 34px;
+    font-size: 20px;
+    cursor: pointer;
+    &:hover {
+      background: #152629;
+      color: white;
+    }
+  }
+}
+
+/*
+  Shared
+*/
 
 .key {
   display: inline-block;
@@ -33,14 +124,12 @@ body {
   user-select: none;
 }
 
-
 .key:hover {
-  box-shadow: 0px 0px 5px #00FFFF;
-  color: #00FFFF;
+  box-shadow: 0px 0px 5px #00ffff;
+  color: #00ffff;
 }
 
-/* When a button is clicked it becomes "active"*/
 .key:active {
-  box-shadow: 0px 0px 5px #28B6FC;
-  color: #28B6FC;
+  box-shadow: 0px 0px 5px #28b6fc;
+  color: #28b6fc;
 }

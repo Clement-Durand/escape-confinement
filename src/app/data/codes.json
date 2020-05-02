@@ -8,7 +8,7 @@
     "lockType": "directions"
   },
   "D": {
-    "code": "Bleu",
+    "code": "2",
     "lockType": "colors"
   },
   "E": {
@@ -16,8 +16,8 @@
     "lockType": "chars"
   },
   "F": {
-    "code": "123",
-    "lockType": "digits"
+    "code": "1",
+    "lockType": "colors"
   },
   "G": {
     "code": "456",

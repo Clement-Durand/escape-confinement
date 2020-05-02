@@ -30,6 +30,9 @@ $color-border: hotpink;
   background: #800000;
   cursor: not-allowed;
 }
+.buffet-right {
+  background: #800000;
+}
 
 .open {
   background: #32a850;
@@ -70,8 +73,8 @@ div[class^="room"]:nth-child(1) {
     left: 408px;
   }
   img:nth-child(3) {
-    top: 150px;
-    left: 370px;
+    top: 195px;
+    left: 375px;
   }
   img:nth-child(4) {
     top: 5px;
@@ -80,10 +83,12 @@ div[class^="room"]:nth-child(1) {
   img:nth-child(5) {
     top: 200px;
     left: 110px;
+    cursor: auto;
   }
   img:nth-child(6) {
     top: 207px;
     left: 150px;
+    cursor: auto;
   }
   &::after {
     content: "";
@@ -101,6 +106,24 @@ div[class^="room"]:nth-child(1) {
       #800000 10px
     );
     cursor: not-allowed;
+  }
+
+  .table {
+    border: 2px black solid;
+    width: 80px;
+    height: 150px;
+    top: 90px;
+    left: 100px;
+    z-index: 0;
+  }
+
+  .buffet-right {
+    border: 2px black solid;
+    width: 45px;
+    height: 120px;
+    top: 145px;
+    left: 361px;
+    z-index: 0;
   }
 }
 
@@ -179,5 +202,21 @@ div[class^="room"]:nth-child(9) {
 }
 
 .scenario-bit {
+  margin-left: 4.8em;
+  border: 2px solid #082f57;
+  border-radius: 5px;
+  color: #082f57;
+  background: white;
+  padding: 0.5em 1em;
+  font-weight: bold;
+  font-size: 1.1em;
   cursor: pointer;
+  &:hover {
+    background: #082f57;
+    color: white;
+  }
+}
+
+.opened {
+  visibility: hidden;
 }

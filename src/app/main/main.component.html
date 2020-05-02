@@ -1,13 +1,5 @@
-<div>header</div>
-
-<p>main works!</p>
-
 <app-timer (messageEvent)="receiveMessage()"> </app-timer>
 
 <div *ngIf="timeIsOver">Fin du temps imparti</div>
 
-<h1>{{ this.indice }}</h1>
-
-<app-plan> </app-plan>
-
-<div>footer</div>
+<app-plan></app-plan>

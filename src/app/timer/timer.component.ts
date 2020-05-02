@@ -15,10 +15,10 @@ export class TimerComponent implements OnInit {
 
   @Output() messageEvent = new EventEmitter<string>();
 
-  hours = 0;
-  minutes = 5;
+  hours = 1;
+  minutes = 3;
   seconds = 5;
-  tenths = 0;
+  hundredths = 0;
 
   ngOnInit(): void {
     const self = this;
@@ -36,7 +36,7 @@ export class TimerComponent implements OnInit {
       }
       if (
         this.timerService.getPenaltyStatus() &&
-        this.currentPenaltyCooldown <= 0
+        this.currentPenaltyCooldown === 0
       ) {
         this.handlePenalty();
         this.timerService.updatePenaltyStatus(false);
@@ -45,13 +45,13 @@ export class TimerComponent implements OnInit {
         this.hours <= 0 &&
         this.minutes <= 0 &&
         this.seconds <= 0 &&
-        this.tenths <= 0
+        this.hundredths <= 0
       ) {
         return this.sendMessage();
       }
-      this.tenths -= 1;
-      if (this.tenths < 0) {
-        this.tenths = 99;
+      this.hundredths -= 1;
+      if (this.hundredths < 0) {
+        this.hundredths = 99;
         this.seconds -= 1;
         if (this.seconds < 0) {
           this.seconds = 59;
@@ -66,9 +66,10 @@ export class TimerComponent implements OnInit {
   }
 
   handlePenalty() {
+    console.log('handle');
     if (this.minutes < this.penalty) {
       if (this.hours === 0) {
-        this.tenths = 0;
+        this.hundredths = 0;
         this.seconds = 0;
         this.minutes = 0;
       } else {

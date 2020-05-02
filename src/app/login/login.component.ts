@@ -1,18 +1,30 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
+  @ViewChild('usernameInput') usernameInput: any;
+  @ViewChild('passwordInput') passwordInput: any;
+  wrongInput = false;
+
+  @Output() messageEvent = new EventEmitter<boolean>();
+
   constructor() {}
-  message: string = 'yes';
 
-  @Output() messageEvent = new EventEmitter<string>();
-
-  sendMessage() {
-    this.messageEvent.emit(this.message);
+  checkInputs() {
+    this.wrongInput = false;
+    console.log(this.wrongInput);
+    if (
+      this.usernameInput.nativeElement.value === 'Qetesh' &&
+      this.passwordInput.nativeElement.value === 'code'
+    ) {
+      this.messageEvent.emit(true);
+    } else {
+      this.wrongInput = true;
+    }
+    this.messageEvent.emit(true);
   }
-  ngOnInit(): void {}
 }

@@ -1,20 +1,10 @@
 <app-login
   (messageEvent)="receiveMessage($event)"
-  *ngIf="message == 'no' && !mobile"
+  *ngIf="!loggedIn && !mobile"
   class="test"
 >
 </app-login>
 
-<router-outlet *ngIf="message == 'yes' && !mobile" class="test"></router-outlet>
+<router-outlet *ngIf="loggedIn && !mobile" class="test"></router-outlet>
 
-<app-mobile-login
-  (messageEvent)="receiveMessage($event)"
-  *ngIf="message == 'no' && mobile"
-  class="mobile"
->
-</app-mobile-login>
-
-<app-mobile-main
-  *ngIf="message == 'yes' && mobile"
-  class="mobile"
-></app-mobile-main>
+<app-mobile-main *ngIf="mobile"></app-mobile-main>

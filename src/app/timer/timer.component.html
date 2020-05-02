@@ -1,10 +1,10 @@
-<div>
-  <div [ngClass]="{red: timeIsOver, penalty: currentPenaltyCooldown}">
-    {{this.hours >= 10 ? this.hours : '0' + this.hours}} h
-    &nbsp;:&nbsp;
-    {{this.minutes >= 10 ? this.minutes : '0' + this.minutes}} m
-    &nbsp;:&nbsp;
-    {{this.seconds >= 10 ? this.seconds : '0' + this.seconds}} s
-    &nbsp;:&nbsp;
-    {{this.tenths >= 10 ? this.tenths : '0' + this.tenths}} s
+  <div
+    [ngClass]="{ timeOver: timeIsOver, penalty: currentPenaltyCooldown }"
+    class="time"
+  >
+    {{ this.hours >= 10 ? this.hours : "0" + this.hours }}:{{
+      this.minutes >= 10 ? this.minutes : "0" + this.minutes
+    }}:{{ this.seconds >= 10 ? this.seconds : "0" + this.seconds }}:{{
+      this.hundredths >= 10 ? this.hundredths : "0" + this.hundredths
+    }}
   </div>

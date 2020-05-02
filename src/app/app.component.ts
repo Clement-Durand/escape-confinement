@@ -9,7 +9,7 @@ export class AppComponent {
   title = 'escape-confinement';
   showSignUp = false;
 
-  message = 'no';
+  loggedIn = false;
   mobile;
 
   constructor() {
@@ -17,6 +17,6 @@ export class AppComponent {
   }
 
   receiveMessage($event) {
-    this.message = $event;
+    this.loggedIn = $event;
   }
 }

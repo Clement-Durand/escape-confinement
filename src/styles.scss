@@ -3,6 +3,15 @@
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
 
+@font-face {
+  font-family: 'Share Tech Mono';
+  src: url('/assets/fonts/Share_Tech_Mono/ShareTechMono-Regular.ttf');
+}
+@font-face {
+  font-family: 'Share Tech';
+  src: url('/assets/fonts/Share_Tech/ShareTech-Regular.ttf');
+}
+
 .modalClass .modal-dialog {
   max-width: 50%;
   .modal-content {
@@ -10,7 +19,7 @@
   }
 }
 
-.modalBackdropClass, .modal-backdrop {
+.modalBackdropClass {
   opacity: 0 !important;
 }
 
@@ -18,5 +27,10 @@
 html,
 body {
   height: 100%;
-  overflow-y: hidden
+  overflow-y: hidden;
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+  user-select: none;
 }  

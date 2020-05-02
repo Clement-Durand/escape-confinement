@@ -13,7 +13,6 @@ import { TimerComponent } from './timer/timer.component';
 import { PlanComponent } from './plan/plan.component';
 import { LockDialogComponent } from './lock-dialog/lock-dialog.component';
 import { ScenarioDialogComponent } from './scenario-dialog/scenario-dialog.component';
-import { MobileLoginComponent } from './mobile-login/mobile-login.component';
 import { MobileMainComponent } from './mobile-main/mobile-main.component';
 
 import { TimerService } from './services/timer.service';
@@ -27,7 +26,6 @@ import { TimerService } from './services/timer.service';
     PlanComponent,
     LockDialogComponent,
     ScenarioDialogComponent,
-    MobileLoginComponent,
     MobileMainComponent,
   ],
   imports: [
