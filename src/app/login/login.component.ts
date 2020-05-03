@@ -16,15 +16,13 @@ export class LoginComponent {
 
   checkInputs() {
     this.wrongInput = false;
-    console.log(this.wrongInput);
     if (
       this.usernameInput.nativeElement.value === 'Qetesh' &&
-      this.passwordInput.nativeElement.value === 'code'
+      this.passwordInput.nativeElement.value === 'JmPLZclr12'
     ) {
       this.messageEvent.emit(true);
     } else {
       this.wrongInput = true;
     }
-    this.messageEvent.emit(true);
   }
 }

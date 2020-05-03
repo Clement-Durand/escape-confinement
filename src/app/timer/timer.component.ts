@@ -66,7 +66,6 @@ export class TimerComponent implements OnInit {
   }
 
   handlePenalty() {
-    console.log('handle');
     if (this.minutes < this.penalty) {
       if (this.hours === 0) {
         this.hundredths = 0;

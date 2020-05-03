@@ -38,7 +38,6 @@ export class MobileMainComponent implements OnInit {
       for (let i = 0; i < entry.keywords.length; ++i) {
         if (searchInput === entry.keywords[i].toUpperCase()) {
           this.resultsToDisplay.push(entry);
-          console.log(entry);
         }
       }
     }
@@ -51,16 +50,12 @@ export class MobileMainComponent implements OnInit {
     } else {
       this.closeFullImage();
     }
-    console.log('open');
-    console.log(this.fullImage);
   }
 
   closeFullImage() {
     if (this.fullImage) {
       this.fullImage = false;
       this.fullImageUrl = '';
-      console.log('close');
-      console.log(this.fullImage);
     }
   }
 
