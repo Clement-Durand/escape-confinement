@@ -1,6 +1,12 @@
-<div>
-  {{ this.scenarioBit.title }}
-  <br />
-  {{ this.scenarioBit.text }}
-  <div (click)="this.activeModal.close()">Fermer</div>
+<div class="container">
+  <div class="title">{{ this.scenarioBit.title }}</div>
+  <img
+    *ngIf="this.scenarioBit.image"
+    class="image"
+    src="{{ this.scenarioBit.image }}"
+  />
+  <div class="text">
+    {{ this.scenarioBit.text }}
+  </div>
+  <div class="close-button" (click)="this.activeModal.close()">Fermer</div>
 </div>

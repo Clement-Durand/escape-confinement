@@ -22,11 +22,11 @@ export class LockDialogComponent {
     { value: 'pink', codeValue: '2' },
     { value: 'green', codeValue: '3' },
     { value: 'red', codeValue: '4' },
-    { value: 'grey', codeValue: '5' },
-    { value: 'orange', codeValue: '6' },
+    { value: 'purple', codeValue: '5' },
+    { value: 'white', codeValue: '6' },
     { value: 'yellow', codeValue: '7' },
     { value: 'orange', codeValue: '8' },
-    { value: 'yellow', codeValue: '9' },
+    { value: 'black', codeValue: '9' },
   ];
 
   inputValue = '';
@@ -39,6 +39,16 @@ export class LockDialogComponent {
     public activeModal: NgbActiveModal,
     private timerService: TimerService
   ) {}
+
+  /*
+    Digits
+  */
+
+  addDigitInput(digitInput) {
+    if (this.inputValue.length < 4) {
+      this.inputValue = ''.concat(this.inputValue, digitInput);
+    }
+  }
 
   /*
     Characters
@@ -83,9 +93,9 @@ export class LockDialogComponent {
     Directions
   */
 
-  addDirectionInput(input) {
+  addDirectionInput(dirInput) {
     if (this.inputValue.length < 4) {
-      this.inputValue = ''.concat(this.inputValue, input);
+      this.inputValue = ''.concat(this.inputValue, dirInput);
     }
   }
 
@@ -93,10 +103,10 @@ export class LockDialogComponent {
     Colors
   */
 
-  addColorInput(input) {
+  addColorInput(colorInput) {
     if (this.inputValue.length < 5) {
-      this.inputValue = ''.concat(this.inputValue, input.codeValue);
-      this.inputValueColors.push(input.value);
+      this.inputValue = ''.concat(this.inputValue, colorInput.codeValue);
+      this.inputValueColors.push(colorInput.value);
     }
   }
 
@@ -118,6 +128,7 @@ export class LockDialogComponent {
         this.input4.nativeElement.value +
         this.input5.nativeElement.value +
         this.input6.nativeElement.value;
+      this.inputValue = this.inputValue.toUpperCase();
     }
     if (this.inputValue === this.code) {
       this.activeModal.close('done');
@@ -130,9 +141,7 @@ export class LockDialogComponent {
 
   clearInput() {
     this.inputValue = '';
-    if (this.lockType === 'digits') {
-      this.input.nativeElement.value = '';
-    } else if (this.lockType === 'chars') {
+    if (this.lockType === 'chars') {
       this.input1.nativeElement.value = '';
       this.input2.nativeElement.value = '';
       this.input3.nativeElement.value = '';

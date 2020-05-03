@@ -1,12 +1,106 @@
-<input (input)="input = $event.target.value" (keyup.enter)="search(input)" />
-<button (click)="this.search(input)">Yes</button>
+<div class="searchbar-container">
+  <input
+    (input)="input = $event.target.value"
+    (keyup.enter)="search(input)"
+    class="search-input"
+    #searchInput
+  />
+  <div class="search-button-container" (click)="this.search(input)">
+    <img src="assets/images/magnifier.png" class="search-button icon" />
+  </div>
+  <div class="clear-button" *ngIf="input" (click)="clearInput()">
+    {{ "&times;" }}
+  </div>
+</div>
 
-<div *ngIf="resultsToDisplay !== null">
-  <ul *ngFor="let item of searchResults">
-    <li>
-      yes
-      <h3>Country Name : {{item.imageResults[resultsToDisplay].url}}, Code:
-        {{item.results[resultsToDisplay].url }}</h3>
-    </li>
-  </ul>
+<div class="results-filter-container" *ngIf="resultsToDisplay.length">
+  <div
+    class="results-filter"
+    [ngClass]="{ selected: !this.imagesFilter }"
+    (click)="filterResults(false)"
+  >
+    Tout
+  </div>
+  <div
+    class="results-filter"
+    [ngClass]="{ selected: this.imagesFilter }"
+    (click)="filterResults(true)"
+  >
+    Images
+  </div>
+</div>
+
+<div *ngIf="resultsToDisplay.length" class="search-results-container">
+  <div *ngIf="!this.imagesFilter" class="search-results-texts-container">
+    <div
+      *ngFor="let result of this.resultsToDisplay[0].results"
+      class="search-result-text"
+    >
+      <div class="url-section">
+        {{ result.url }}
+      </div>
+      <div
+        class="title-section"
+        [ngClass]="{ visited: result.lastVisited !== '0' }"
+      >
+        {{ result.title }}
+      </div>
+      <div class="preview-section">
+        {{ result.preview }}
+      </div>
+      <div class="last-line">
+        <span class="site">
+          {{ result.site }}
+        </span>
+        <span class="last-visit" *ngIf="result.lastVisited !== '0'">
+          Dernière visite : {{ result.lastVisited }}
+        </span>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="this.imagesFilter" class="search-results-images-container">
+    <div
+      *ngFor="let result of this.resultsToDisplay[0].imageResults"
+      class="search-result-image"
+      (click)="showFullImage(result.imgUrl)"
+      style="
+        background-image: url('{{ result.imgUrl }}');
+        background-repeat: no-repeat;
+        background-size: cover;
+      "
+    >
+      <div class="text-btm-container">
+        <span class="first-line">
+          {{ result.title }}
+        </span>
+        <span class="second-line">{{ result.siteUrl }}</span>
+      </div>
+    </div>
+  </div>
+  <div
+    class="full-img-container"
+    (click)="closeFullImage()"
+    *ngIf="this.fullImage === true"
+  >
+    <img class="full-img" src="{{ fullImageUrl }}" />
+  </div>
+</div>
+
+<div *ngIf="!resultsToDisplay.length" class="no-results">
+  Aucune recherche ou aucun résultat correspondant à cette recherche.
+</div>
+
+<div class="scenario-bit" [ngClass]="{ scenarioOpen: this.scenarioOpen }">
+  <div class="title">{{ this.scenarioBit.title }}</div>
+  <div class="text">
+    {{ this.scenarioBit.text }}
+  </div>
+</div>
+
+<div
+  class="scenario-button"
+  [ngClass]="{ open: this.scenarioOpen }"
+  (click)="this.openScenario()"
+>
+  '{{ this.scenarioBit.title }}'
 </div>

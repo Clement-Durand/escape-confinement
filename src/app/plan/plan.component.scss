@@ -201,22 +201,79 @@ div[class^="room"]:nth-child(9) {
   height: 279px;
 }
 
-.scenario-bit {
-  margin-left: 4.8em;
-  border: 2px solid #082f57;
-  border-radius: 5px;
-  color: #082f57;
-  background: white;
+.lockOpened {
+  visibility: hidden;
+}
+
+.scenario-bit-button {
+  margin-left: 3.7em;
+  background: #152629;
   padding: 0.5em 1em;
   font-weight: bold;
   font-size: 1.1em;
+  color: white;
+  position: relative;
   cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease-out;
+
+  &::before,
+  &::after {
+    content: "";
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    border-bottom: 2px solid #152629;
+    border-top: 5px solid #152629;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    transition: left 0.5s ease-out;
+  }
+  &::before {
+    top: 0;
+    left: -50%;
+  }
+  &::after {
+    top: 0;
+    left: 100%;
+  }
   &:hover {
-    background: #082f57;
-    color: white;
+    background: white;
+    color: #152629;
+    transition: all 0.5s ease-out;
+  }
+  &:hover::before,
+  &:hover::after {
+    left: 0;
+    transition: left 0.5s ease-out;
+  }
+  &:hover::before {
+    left: 50%;
   }
 }
 
-.opened {
-  visibility: hidden;
+.game-ended {
+  position: absolute;
+  width: 70%;
+  top: 30%;
+  left: 15%;
+  z-index: 100000;
+  background-color: #152629;
+  color: white;
+  text-align: center;
+  font-size: 10rem;
+  font-weight: bold;
+
+  &::after {
+    overflow: hidden;
+    position: absolute;
+    top: -300px;
+    left: -300px;
+    width: 101vw;
+    height: 110vh;
+    content: "";
+  }
 }

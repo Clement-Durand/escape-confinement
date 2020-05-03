@@ -11,13 +11,21 @@
   font-family: 'Share Tech';
   src: url('assets/fonts/Share_Tech/ShareTech-Regular.ttf');
 }
+* {
+  font-family: Montserrat;
+}
+
 
 .modalClass .modal-dialog {
   max-width: 50%;
   .modal-content {
-      padding: 3em 0;
+      padding-top: 3em;
+      border: 3px solid  #152629;
+      border-radius: 0;
+      overflow:hidden;
   }
 }
+
 
 .modalBackdropClass {
   opacity: 0 !important;

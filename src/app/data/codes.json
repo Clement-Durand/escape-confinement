@@ -1,30 +1,30 @@
 {
   "A": {
-    "code": "abcdef",
+    "code": "VAFSUA",
     "lockType": "chars"
   },
   "B": {
-    "code": "^^^",
+    "code": "^<v<",
     "lockType": "directions"
   },
   "D": {
-    "code": "2",
+    "code": "28253",
     "lockType": "colors"
   },
   "E": {
-    "code": "efghij",
+    "code": "EGYPTE",
     "lockType": "chars"
   },
   "F": {
-    "code": "1",
+    "code": "67194",
     "lockType": "colors"
   },
   "G": {
-    "code": "456",
+    "code": "7961",
     "lockType": "digits"
   },
   "H": {
-    "code": "234",
+    "code": "2496",
     "lockType": "digits"
   }
 }

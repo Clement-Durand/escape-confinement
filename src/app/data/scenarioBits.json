@@ -1,30 +1,35 @@
 {
   "0": {
-    "text": "Apres login, explication valla mes couilles il lui manque des éléments",
-    "title": "Suspicion"
+    "text": "Depuis quelque temps, Qetesh a remarqué des comportements inhabituels de la part de Valla. Elle a donc décidé de l'observer afin d'en savoir plus. Vous avez maintenant accès au plan et vous allez pouvoir l'aider dans son enquête. Elle pense avoir une idée mais n'a pas accès à toutes les pièces, il lui manque donc des éléments.",
+    "title": "Suspicion",
+    "image": "assets/images/qetesherlock.png"
   },
   "A": {
-    "text": "Ouverture cuisine, continue explication et indice beaucoup d'infos, elle ne sait pas ou donner de la tete",
+    "text": "Beaucoup d'endroits inaccessibles pour Qetesh et donc d'éléments essentiels qu'elle aurait pu rater. Avec tous ces placards et hauteurs, elle ne sait plus où donner de la tête.",
     "title": "Confusion"
   },
   "B": {
-    "text": "Ouverture couloir, plus clair mais besoin de faire des recherches",
-    "title": "Reflexion"
+    "text": "L'accès au couloir lui permettra d'y voir plus clair, c'est une évidence. Cependant, Qetesh pense d'abord à faire des recherches approfondies sur ce qu'elle savait déjà.",
+    "title": "Application"
+  },
+  "C": {
+    "text": "Avec toutes ces preuves, les doutes de Qetesh se confirment: Valla prépare un plan pour s'en aller. Ces recherches sont éloquentes, bien que certaines datent un peu.",
+    "title": "Affirmation"
   },
   "D": {
-    "text": "c'est bien ce qui me semblait, elle a du faire un choix selon certains critères",
+    "text": "Le plan complet est de plus en proche. D'après Qetesh, Valla a du faire une sélection entre les meilleurs choix et définir des critères pour finaliser sa décision.",
     "title": "Conclusion"
   },
   "E": {
-    "text": "elle semble décidée a aller a xxx mais elle ne pourra pas y aller sans 'bouffe mais pas obvious'",
-    "title": "Provision"
+    "text": "Bien qu'abasourdie par le choc de la révélation, Qetesh reprend rapidement ses esprits et, après une brève réflexion, se dit qu'elle ne pourrait pas partir sans être bien préparée et avec un élément essentiel. Elle fonce directement au buffet, mais il est fermé.",
+    "title": "Préparation"
   },
   "F": {
-    "text": "Ouverture placard -> elle a de quoi faire le voyage mais besoin d'apprendre a communiquer avec autres animaux",
+    "text": "Valla avait donc prévu de quoi faire le voyage. Il semblerait qu'elle ait également préparé un nouveau moyen d'expression.",
     "title": "Communication"
   },
   "G": {
-    "text": "Ouverture bureau -> il semble qu'elle soit prete a partir mais elle est toujours la, le confinement a du la pousser a y réfléchir a deux fois et approfondir ses recherches",
-    "title": "Fiction"
+    "text": "Qetesh est confuse par les dernières trouvailles : il semblerait qu'elle ait tout préparé pour un grand départ. Cependant, elle ne l'a pas encore pris. Quelque chose doit l'en empêcher. Peut-être que le confinement l'a poussée à réfléchir à deux fois et approfondir ses recherches avant de prendre la porte.",
+    "title": "Appréhension"
   }
 }

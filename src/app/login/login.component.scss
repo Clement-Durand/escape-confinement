@@ -49,14 +49,17 @@
     justify-content: center;
     display: flex;
     .button {
-      background: #082f57;
-      color: white;
+      background: white;
+      color: #152629;
       padding: 0.5em 1em;
       font-weight: bold;
       cursor: pointer;
       &:hover {
-        color: #082f57;
-        background: white;
+        color: white;
+        background: #152629;
+        box-shadow: 0 0.5em 0.5em -0.4em #152629;
+        transform: translate(-0.15em, -0.25em);
+        transition: all 0.2s ease-out;
       }
     }
   }

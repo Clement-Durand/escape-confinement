@@ -1,3 +1,4 @@
+import { TimerService } from './../services/timer.service';
 import { Component, OnInit } from '@angular/core';
 import { LockDialogComponent } from '../lock-dialog/lock-dialog.component';
 import { ScenarioDialogComponent } from '../scenario-dialog/scenario-dialog.component';
@@ -15,7 +16,10 @@ export class PlanComponent implements OnInit {
   public scenarioBits = scenarioBits;
   locksUnlocked = ['0'];
 
-  constructor(private modalService: NgbModal) {}
+  constructor(
+    private modalService: NgbModal,
+    private timerService: TimerService
+  ) {}
 
   ngOnInit(): void {}
 
@@ -31,7 +35,9 @@ export class PlanComponent implements OnInit {
     modalRef.result.then((result) => {
       if (result == 'done' && !this.locksUnlocked.includes(lockName)) {
         this.locksUnlocked.push(lockName);
-        console.log(this.locksUnlocked);
+        if (lockName === 'H') {
+          this.timerService.updateTimerStatus();
+        }
       }
     });
   }

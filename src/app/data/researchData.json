@@ -1,43 +1,285 @@
-[{
-    "keywords": [
-      "1",
-      "11"
-    ],
-    "results": [{
-        "url": "url1",
-        "title": "title1",
-        "site": "site1",
-        "preview": "preview1",
-        "lastVisited": "(pas forcément, 0 si jamais et filtré a affichage ? )"
+[
+  {
+    "keywords": ["morse", "code morse", "morse code", "codemorse", "morsecode"],
+    "results": [
+      {
+        "url": "fr.wikipedia.org/wiki/Code_Morse_international",
+        "title": "Code Morse International - Wikipedia",
+        "site": "Wikipedia",
+        "preview": "Le code Morse international, ou l'alphabet Morse international, est un code permettant de transmettre un texte à l'aide de séries d'impulsions courtes et longues, qu'elles soient produites par des signes, une lumière, un son ou un geste.",
+        "lastVisited": "17/11/19"
       },
       {
-        "url": "url2",
-        "title": "title2",
-        "site": "site2",
-        "preview": "preview2",
-        "lastVisited": "(pas forcément, 0 si jamais et filtré a affichage ? )"
+        "url": "www.lexilogos.com/clavier/morse",
+        "title": "Code morse - Conversion, traduction texte en ligne LEXILOGOS",
+        "site": "LexiLogos",
+        "preview": "En code morse, taper une espace après chaque lettre pour la conversion.",
+        "lastVisited": "0"
+      },
+      {
+        "url": "nymphomath.ch/crypto/morse",
+        "title": "Alphabet Morse - Nymphomath",
+        "site": "NymphoMath",
+        "preview": "Le code Morse (du nom de Samuel Morse, son inventeur) est un code télégraphique utilisant un alphabet conventionnel fait de traits et de points, et, quant au ...",
+        "lastVisited": "0"
       }
     ],
-    "imageResults": [{
-        "img": "img1",
-        "title": "titleimg1",
-        "site": "siteimg1",
-        "url": "urlimg1"
+    "imageResults": [
+      {
+        "imgUrl": "assets/images/morse1.png",
+        "title": "International Morse Code",
+        "siteName": "siteimg1",
+        "siteUrl": "fr.wikipedia.org"
       },
       {
-        "img": "img2",
-        "title": "titleimg2",
-        "site": "siteimg2",
-        "url": "urlimg2"
+        "imgUrl": "assets/images/morse2.png",
+        "title": "Modern ways to learn Morse code",
+        "siteName": "hangar42",
+        "siteUrl": "hangar42.nl/morse"
+      },
+      {
+        "imgUrl": "assets/images/morse3.png",
+        "title": "Code Morse - Traducteur",
+        "siteName": "dcode",
+        "siteUrl": "dcode.fr/code-morse"
+      },
+      {
+        "imgUrl": "assets/images/morse4.png",
+        "title": "Codeur / Décodeur Morse",
+        "siteName": "La 104 Don Bosco",
+        "siteUrl": "la104.be/codeurdecodeur-morse"
       }
     ]
   },
+
   {
     "keywords": [
-      "2",
-      "12"
+      "binaire",
+      "code binaire",
+      "binary",
+      "binary code",
+      "codebinaire",
+      "binaire code"
     ],
-    "results": [{
+    "results": [
+      {
+        "url": "fr.wikipedia.org",
+        "title": "Code Binaire",
+        "site": "Wikipedia",
+        "preview": "Un code binaire représente un texte, des instructions de processeur ou toute autre donnée utilisant un système à deux symboles. Le système à deux symboles ...",
+        "lastVisited": "0"
+      },
+      {
+        "url": "dcode.fr/code-binaire",
+        "title": "Code Binare - Conversion / Traduction",
+        "site": "dcode",
+        "preview": "Ajouter Code Binaire à vos applis mobiles !! Résultats. Menu. Conversion/Déchiffrement de Codes Binaires; Conversion en Binaire; Comment convertir ...",
+        "lastVisited": "12/01/20"
+      }
+    ],
+    "imageResults": [
+      {
+        "imgUrl": "assets/images/binaire1.png",
+        "title": "Liste des choses à faire - Apprendre le binaire",
+        "siteName": "Pinterest",
+        "siteUrl": "pinterest.fr/pin/189287317"
+      },
+      {
+        "imgUrl": "assets/images/binaire2.jpg",
+        "title": "Courant de code binaire - Illustration stock",
+        "siteName": "Dreamstime",
+        "siteUrl": "dreamstime.com/courant-code-binaire"
+      },
+      {
+        "imgUrl": "assets/images/binaire3.png",
+        "title": "Code binaire - définitions",
+        "siteName": "Futura Sciences",
+        "siteUrl": "futura-sciences.com/techs/definitions/binaire"
+      }
+    ]
+  },
+
+  {
+    "keywords": [
+      "césar",
+      "code césar",
+      "cesar",
+      "code cesar",
+      "chiffrement césar",
+      "chiffrementcesar",
+      "codecésar",
+      "codecesar",
+      "césar code",
+      "cesar code"
+    ],
+    "results": [
+      {
+        "url": "fr.wikipedia.org/Chiffrement_par_decalage",
+        "title": "Chiffrement par décalage - Wikipedia",
+        "site": "Wikipedia",
+        "preview": "Aller à César - En cryptographie, le chiffrement par décalage, aussi connu comme le chiffre de César ou le code de César (voir les différents noms), est ...",
+        "lastVisited": "13/04/20"
+      },
+      {
+        "url": "dcode.fr/chiffre-cesar",
+        "title": "Code César - Chiffre de César - Déchiffrer",
+        "site": "dcode",
+        "preview": "Comment chiffrer CESAR avec le code César ? Comment écrire l'algorithme de Caesar en pseudo ...",
+        "lastVisited": "15/05/20"
+      }
+    ],
+    "imageResults": [
+      {
+        "imgUrl": "assets/images/cesar1.png",
+        "title": "Caesar cipher - Wikipedia",
+        "siteName": "siteimg3",
+        "siteUrl": "en.wikipedia.org/wiki/Caesar_cipher"
+      }
+    ]
+  },
+
+  {
+    "keywords": [
+      "dérangement",
+      "dérangé",
+      "derangement",
+      "derange",
+      "derangement alphabetique",
+      "dérangement alphabétique"
+    ],
+    "results": [
+      {
+        "url": "dcode.fr/derangement-alphabetique",
+        "title": "Chiffrement par dérangement alphabétique",
+        "site": "dcode",
+        "preview": "Chaque segment est trié par ordre alphabétique, lire ensuite le texte (qui ne comporte plus d'espace). Exemple : PLA,H,TEBA devient ALP,H,ABET",
+        "lastVisited": "13/02/19"
+      },
+      {
+        "url": "amazon.fr/Classeur-Alphabetique",
+        "title": "Classeur Alphabétique - Amazon.fr",
+        "site": "amazon",
+        "preview": "Amazon.fr : Classeur Alphabétique. ... Vouliez-vous dire classeur alphabetique ...",
+        "lastVisited": "0"
+      }
+    ],
+    "imageResults": [
+      {
+        "imgUrl": "assets/images/derangement1.png",
+        "title": "Dérangement Alphabétique - Dcode",
+        "siteName": "siteimg3",
+        "siteUrl": "dcode.fr/derangement-alphabetique"
+      },
+      {
+        "imgUrl": "assets/images/derangement2.png",
+        "title": "Rangement Alphabetique",
+        "siteName": "istock",
+        "siteUrl": "istockphoto.com/rangement/azit19"
+      }
+    ]
+  },
+
+  {
+    "keywords": [
+      "zig zag",
+      "zig-zag",
+      "zigzag",
+      "zig zag code",
+      "zig-zag code",
+      "zigzag code",
+      "rail fence cipher",
+      "chiffre rail fence",
+      "rail fence"
+    ],
+    "results": [
+      {
+        "url": "www.dcode.fr/chiffre-rail-fence",
+        "title": "Chiffre Rail Fence - Déchiffrer",
+        "site": "Dcode",
+        "preview": "Outils pour décoder/encoder Rail Fence automatiquement. Le chiffrement Rail Fence (traduction : palissade) est un chiffre de transposition consistant à écrire un ...",
+        "lastVisited": "0"
+      },
+      {
+        "url": "en.wikipedia.org/wiki/rail_fence_cipher",
+        "title": "Rail Fence Cipher - Wiki",
+        "site": "Wikipedia",
+        "preview": "The rail fence cipher is a form of transposition cipher. It derives its name from the way in which it is encoded. Contents. 1 Method; 2 Solution; 3 Problems with the ...",
+        "lastVisited": "17/12/19"
+      }
+    ],
+    "imageResults": [
+      {
+        "imgUrl": "assets/images/zigzag1.png",
+        "title": "Zig Zag",
+        "siteName": "Dcode",
+        "siteUrl": "dcode.fr/chiffre-rail-fence"
+      },
+      {
+        "imgUrl": "assets/images/zigzag2.png",
+        "title": "Rail Fence Cipher",
+        "siteName": "Dcode",
+        "siteUrl": "101computing.net/the-rail-fence-cipher/"
+      }
+    ]
+  },
+
+  {
+    "keywords": ["zbfxn", "ZBFXN", "Zbfxn"],
+    "results": [
+      {
+        "url": "url3",
+        "title": "title3",
+        "site": "site3",
+        "preview": "preview3",
+        "lastVisited": "0"
+      },
+      {
+        "url": "url4",
+        "title": "title4",
+        "site": "site4",
+        "preview": "preview4",
+        "lastVisited": "0"
+      },
+      {
+        "url": "url4",
+        "title": "title4",
+        "site": "site4",
+        "preview": "preview4",
+        "lastVisited": "0"
+      }
+    ],
+    "imageResults": [
+      {
+        "imgUrl": "img3",
+        "title": "titleimg3",
+        "siteName": "siteimg3",
+        "siteUrl": "urlimg3"
+      },
+      {
+        "imgUrl": "img4",
+        "title": "titleimg4",
+        "siteName": "siteimg4",
+        "siteUrl": "urlimg4"
+      },
+      {
+        "imgUrl": "img4",
+        "title": "titleimg4",
+        "siteName": "siteimg4",
+        "siteUrl": "urlimg4"
+      },
+      {
+        "imgUrl": "img4",
+        "title": "titleimg4",
+        "siteName": "siteimg4",
+        "siteUrl": "urlimg4"
+      }
+    ]
+  },
+
+  {
+    "keywords": ["date", "date annee", "annee date"],
+    "results": [
+      {
         "url": "url3",
         "title": "title3",
         "site": "site3",
@@ -52,17 +294,18 @@
         "lastVisited": "(pas forcément, 0 si jamais et filtré a affichage ? )"
       }
     ],
-    "imageResults": [{
-        "img": "img3",
+    "imageResults": [
+      {
+        "imgUrl": "img3",
         "title": "titleimg3",
-        "site": "siteimg3",
-        "url": "urlimg3"
+        "siteName": "siteimg3",
+        "siteUrl": "urlimg3"
       },
       {
-        "img": "img4",
+        "imgUrl": "img4",
         "title": "titleimg4",
-        "site": "siteimg4",
-        "url": "urlimg4"
+        "siteName": "siteimg4",
+        "siteUrl": "urlimg4"
       }
     ]
   }

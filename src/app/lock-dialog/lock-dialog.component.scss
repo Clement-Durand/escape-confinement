@@ -1,5 +1,5 @@
-body {
-  background-color: #000000;
+* {
+  font-family: Montserrat;
 }
 
 #digipad,
@@ -16,30 +16,73 @@ body {
   Only Characters lock
 */
 
-#chars input {
-  width: 20px;
+.chars-title {
   text-align: center;
+  color: #152629;
+  font-size: 1.5rem;
+}
+
+.chars-input-container {
+  display: flex;
+  flex-direction: row;
+  width: 240px;
+  margin: 2em auto 0 auto;
+
+  .char-input {
+    border: none;
+    box-sizing: border-box;
+    margin: auto;
+    height: 45px;
+    width: 20px;
+    font-size: 25px;
+    text-align: center;
+    color: #152629;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    padding-top: 3px;
+    font-family: "Share Tech";
+    &::placeholder {
+      color: #152629;
+    }
+    &:focus::placeholder {
+      color: transparent;
+    }
+  }
 }
 
 /*
-  Only Directions lock
+  Only Digits lock
 */
+#digipad {
+  .key {
+    font-family: "Share Tech Mono" !important;
+    padding: 8px 15px 5px 15px;
+    font-size: 22px;
+  }
+  .key:nth-child(10) {
+    margin-bottom: 0;
+  }
+}
 
-.directions-input-container {
+.digits-input-container {
   display: flex;
   flex-direction: row;
   position: relative;
   left: -20px;
   width: 240px;
+  margin-top: 2em;
   .input-display,
   .delete-button {
     border: 1px solid #152629;
     box-sizing: border-box;
-    border-radius: 5px;
     margin: auto;
-    width: 50px;
-    height: 50px;
-    font-size: 30px;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    padding-top: 3px;
     text-align: center;
     color: #152629;
     -moz-user-select: -moz-none;
@@ -52,14 +95,116 @@ body {
   .delete-button {
     position: absolute;
     right: -65px;
-    top: 8px;
+    top: 5px;
     width: 60px;
-    height: 34px;
-    font-size: 20px;
+    height: 30px;
+    font-size: 17px;
+    border-radius: 3px;
     cursor: pointer;
+    i {
+      position: relative;
+      top: -3px;
+    }
+    span {
+      position: relative;
+      top: -2px;
+    }
     &:hover {
-      background: #152629;
-      color: white;
+      box-shadow: 0px 0px 1px #152629;
+    }
+    &:active {
+      box-shadow: 0px 0px 3px #152629;
+    }
+  }
+}
+
+/*
+  Only Directions lock
+*/
+
+.arrow {
+  border: solid #152629;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+
+.up {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+#directionpad {
+  .key:nth-child(4) {
+    margin-bottom: 0;
+  }
+}
+
+.directions-input-container {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  left: -20px;
+  width: 240px;
+  margin-top: 2em;
+  .input-display,
+  .delete-button {
+    border: 1px solid #152629;
+    box-sizing: border-box;
+    margin: auto;
+    width: 45px;
+    height: 45px;
+    font-size: 25px;
+    text-align: center;
+    color: #152629;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+  }
+  .input-display {
+    padding-top: 3px;
+    font-family: "Share Tech";
+  }
+
+  .delete-button {
+    border-radius: 3px;
+    position: absolute;
+    right: -65px;
+    top: 8px;
+    width: 50px;
+    height: 30px;
+    font-size: 17px;
+    cursor: pointer;
+
+    i {
+      position: relative;
+    }
+    span {
+      position: relative;
+      top: 1px;
+    }
+    &:hover {
+      box-shadow: 0px 0px 1px #152629;
+    }
+    &:active {
+      box-shadow: 0px 0px 3px #152629;
     }
   }
 }
@@ -81,27 +226,42 @@ body {
   position: relative;
   left: -50px;
   width: 300px;
+  margin-top: 2em;
+
   .input-display,
   .delete-button {
-    border-radius: 5px;
+    border: 1px solid #152629;
     margin: auto;
     width: 50px;
     height: 50px;
     font-size: 30px;
     text-align: center;
   }
+  .input-display {
+    background-color: #15262915;
+  }
 
   .delete-button {
     position: absolute;
     right: -65px;
-    top: 8px;
+    top: 10px;
     width: 60px;
-    height: 34px;
-    font-size: 20px;
+    height: 30px;
+    font-size: 17px;
+    border-radius: 3px;
     cursor: pointer;
+
+    i {
+      position: relative;
+    }
+    span {
+      position: relative;
+    }
     &:hover {
-      background: #152629;
-      color: white;
+      box-shadow: 0px 0px 1px #152629;
+    }
+    &:active {
+      box-shadow: 0px 0px 3px #152629;
     }
   }
 }
@@ -112,24 +272,103 @@ body {
 
 .key {
   display: inline-block;
-  color: rgb(170, 183, 252);
+  color: #152629;
   padding: 10px 15px 10px 15px;
   margin: 10px;
-  box-shadow: 0px 0px 5px rgb(170, 183, 252);
+  box-shadow: 0px 0px 2px #152629;
   border-radius: 3px;
   -moz-user-select: -moz-none;
   -khtml-user-select: none;
   -webkit-user-select: none;
   -o-user-select: none;
   user-select: none;
+  cursor: pointer;
 }
 
 .key:hover {
-  box-shadow: 0px 0px 5px #00ffff;
-  color: #00ffff;
+  color: #4f98f8;
+  box-shadow: 0px 0px 4px #152629;
 }
 
 .key:active {
-  box-shadow: 0px 0px 5px #28b6fc;
-  color: #28b6fc;
+  box-shadow: 0px 0px 5px #152629;
+}
+
+.footer {
+  justify-content: center;
+  border: none;
+  margin: 2em 0;
+  padding: 0;
+}
+
+.close-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-weight: bold;
+  color: #152629;
+  line-height: 10px;
+  padding: 10px;
+  font-family: Montserrat;
+  cursor: pointer;
+  background-color: transparent;
+  &:hover {
+    animation: pulse 0.2s ease-out;
+    box-shadow: 0 0 0 0 rgba(#fff, 0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0.2em #152629;
+  }
+}
+
+.button {
+  box-sizing: border-box;
+  cursor: pointer;
+  border: 2px solid #152629;
+  position: relative;
+  overflow: hidden;
+  width: 8rem;
+  padding: 0.5em;
+  text-align: center;
+  transition: all 0.5s ease-out;
+
+  &::before {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    padding: 0.5em 0;
+    left: -100%;
+    background: #152629;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    transition: left 0.5s ease-out;
+  }
+  &:hover {
+    color: white;
+  }
+  &:hover::before {
+    text-align: center;
+    color: white;
+    left: 0;
+    transition: all 0.5s ease-out;
+  }
+}
+
+.submit {
+  &::before {
+    content: "VALIDER";
+  }
+}
+
+.clear {
+  &::before {
+    left: 100%;
+    content: "EFFACER";
+  }
 }

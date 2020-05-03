@@ -4,30 +4,77 @@
 
 <div id="digipad" *ngIf="this.lockType == 'digits'">
   <div
-    *ngFor="let item of [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]"
+    *ngFor="let digit of [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]"
     class="key"
-    (click)="inputValue = ''.concat(inputValue, item); input.value = inputValue"
+    (click)="addDigitInput(digit)"
   >
-    {{ item }}
+    {{ digit }}
   </div>
-  <input
-    (input)="inputValue = $event.target.value; input.value = inputValue"
-    (keyup.enter)="checkCode()"
-    #input
-  />
+  <div class="digits-input-container">
+    <div *ngFor="let inputIndex of [0, 1, 2, 3]" class="input-display">
+      {{ this.inputValue[inputIndex] ? this.inputValue[inputIndex] : " " }}
+    </div>
+    <div
+      (click)="inputValue = inputValue.substr(0, inputValue.length - 1)"
+      class="delete-button"
+    >
+      <i class="arrow left"></i><span>-</span>
+    </div>
+  </div>
 </div>
 
 <!--
   Displaying characters lock
 -->
-
-<div id="chars" *ngIf="this.lockType == 'chars'">
-  <input type="text" (input)="changeFocus(1)" maxlength="1" #input1 />
-  <input type="text" (input)="changeFocus(2)" maxlength="1" #input2 />
-  <input type="text" (input)="changeFocus(3)" maxlength="1" #input3 />
-  <input type="text" (input)="changeFocus(4)" maxlength="1" #input4 />
-  <input type="text" (input)="changeFocus(5)" maxlength="1" #input5 />
-  <input type="text" (input)="changeFocus(6)" maxlength="1" #input6 />
+<div class="chars-input-container" *ngIf="this.lockType == 'chars'">
+  <input
+    class="char-input"
+    placeholder="_"
+    type="text"
+    (input)="changeFocus(1)"
+    maxlength="1"
+    #input1
+  />
+  <input
+    class="char-input"
+    placeholder="_"
+    type="text"
+    (input)="changeFocus(2)"
+    maxlength="1"
+    #input2
+  />
+  <input
+    class="char-input"
+    placeholder="_"
+    type="text"
+    (input)="changeFocus(3)"
+    maxlength="1"
+    #input3
+  />
+  <input
+    class="char-input"
+    placeholder="_"
+    type="text"
+    (input)="changeFocus(4)"
+    maxlength="1"
+    #input4
+  />
+  <input
+    class="char-input"
+    placeholder="_"
+    type="text"
+    (input)="changeFocus(5)"
+    maxlength="1"
+    #input5
+  />
+  <input
+    class="char-input"
+    placeholder="_"
+    type="text"
+    maxlength="1"
+    #input6
+    (keyup.enter)="checkCode()"
+  />
 </div>
 
 <!--
@@ -36,11 +83,26 @@
 
 <div id="directionpad" *ngIf="this.lockType == 'directions'">
   <div
-    *ngFor="let direction of ['&lt;', '^', '&gt;', 'v']"
+    *ngFor="
+      let direction of [
+        { code: '&lt;', value: 'left' },
+        { code: '^', value: 'up' },
+        { code: '&gt;', value: 'right' },
+        { code: 'v', value: 'down' }
+      ]
+    "
     class="key"
-    (click)="addDirectionInput(direction)"
+    (click)="addDirectionInput(direction.code)"
   >
-    {{ direction }}
+    <i
+      class="arrow"
+      [ngClass]="{
+        right: direction.value == 'right',
+        up: direction.value == 'up',
+        left: direction.value == 'left',
+        down: direction.value == 'down'
+      }"
+    ></i>
   </div>
   <div class="directions-input-container">
     <div *ngFor="let inputIndex of [0, 1, 2, 3]" class="input-display">
@@ -50,7 +112,7 @@
       (click)="inputValue = inputValue.substr(0, inputValue.length - 1)"
       class="delete-button"
     >
-      Suppr
+      <i class="arrow left"></i><span>-</span>
     </div>
   </div>
 </div>
@@ -73,7 +135,7 @@
       style="background : {{ this.inputValueColors[inputIndex] }}"
     ></div>
     <div (click)="delColorInput()" class="delete-button">
-      Suppr
+      <i class="arrow left"></i><span>-</span>
     </div>
   </div>
 </div>
@@ -82,23 +144,15 @@
   Displaying buttons shared by all types of locks
 -->
 
-<div>
-  <button
-    type="button"
-    class="btn btn-primary"
-    (click)="checkCode()"
-    #submitButton
-  >
+<div class="close-button" (click)="this.activeModal.close()">
+  X
+</div>
+
+<div class="modal-footer footer">
+  <div class="button submit" (click)="checkCode()" #submitButton>
     Valider
-  </button>
-  <button
-    type="button"
-    class="btn btn-primary"
-    (click)="this.activeModal.close()"
-  >
-    Quitter
-  </button>
-  <button type="button" class="btn btn-primary" (click)="clearInput()">
-    Clear
-  </button>
+  </div>
+  <div class="button clear" (click)="clearInput()">
+    Effacer
+  </div>
 </div>
